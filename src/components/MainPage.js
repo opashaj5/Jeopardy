@@ -38,7 +38,7 @@ export default function MainPage(props) {
             {question.map((item, idx) => {
                 return (
                     <>
-                        <h1>WELCOME TO JEOPARDY</h1>
+                        <h1>Welcome to Jeopardy!</h1>
                         <h2>Score: <span style={score >= 0 ? { color: "white" } : { color: "red" }}>{score}</span></h2>
                         <div className="buttonContainer">
                             <button className="button1" onClick={() => { decreaseScore(item.value) }}>Decrease</button>
@@ -46,14 +46,13 @@ export default function MainPage(props) {
                             <button className="button3" onClick={() => { resetScore() }}>Reset</button>
                         </div>
                         <h2>Let's Play!</h2>
-                        <button className="button4" onClick={() => { return getData(), setHide(true) }}>Random Trivia Question</button>
+                        <button className="button4" onClick={() => { return getData(), setHide(true) }}>Get Question</button>
                         <h2>Category: <span>{item.category.title}</span></h2>
                         <h2 className="points">Points: <span>{item.value}</span></h2>
                         <h2>Question: <span>{item.question}</span></h2>
-                        <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Answer</button>
+                        <button className="button5" onClick={() => { setHide(!hide) }}>Click to Reveal Answer</button>
                         {!hide ?
                             <h3>Answer: <span>{item.answer}</span></h3> : ''}
-
                     </>
                 );
             })
